@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML5 and CSS3</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css" media="all"></link>
+    <script async src="js/main.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <hgroup>
+            <h1>Free Education</h1>
+        </hgroup>
+        <nav class="sideNavCourses">
+            <div class="flex-container" id="flexboxLogin">
+                <div>
+                    <canvas title="Preferences"></canvas>
+                </div>
+                <div>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAEPElEQVRIS61WXUxcVRD+jqmlMTxIxFgTJQYFCm01JD4Sf4B7lzVq7cuaEJKqLzSoGJqWCq821SLRRGM0RmJpIkLD2rAmZWvjg6lNKWlaw1oQobtgRY2QhhgToew9ozNz793dLLy5yd1z7t058818883cNQAwPj5OvP7fn2g0agw7b2ho2NI3EUEuS7CwIM/CEsFaG16e58merIXHduTBehaZTAYmPhonN+JuCqDOASIrIPlOeZ9IJMJzruti/bMB3PHSAdiTJ0FtbZienoYZGBigWCxWDMCOOWarGWiEPghp9IODg2htbcXQ0BBisRdhrYdHqqrw08yM/D4xMQHT399P7e3tRQBMg0RuIalbcUo4duwtse3uPoq+vhPhudc7O1HadQir755A2ZFurLx9HMlkEqanp5d6e3sKAALeNXp1zNFxBh7xauF5Oa4LqeN6aKZfDg/DvNrRQYABGf7mj/Ju/Gf8hJ+zzIxojWQPY2DUEHxYnvp7Y9SHeNnfk1CJBl7ycuFMxGW4asEDENlKQH6dVBECpqojBXAaKzdXkQU8NuNV5KepZz3oypQxXVny9yTU8bOsR5idWiwGuCepPbEcuSBpKp/MfXBY79l57USz2F6tHxeHnqd9oCCbALDz2MHH5dDpT67IutT0nQIwEB8kLfCuCafI9mLd1wokIBZzqUWYF94cI7fpYXHGAC1Nq1i8Xl5AWbLmvFLBVPlR7p50N7X9qDSuAESYm8rA7Ds6RpHmHEDtzm3Ye+AVgDaA9T+AtUWkxn5GovKcD6L0PHYlgq1s399xWrIWgOe7z1CLUyV8l59ryB3aWAHWfpErdfYWzjw0rpH56ddfi25p218yInTeSKVhnjvyFUXd6rCYT/3YiL1tMWBtCVhfkDV1HhitOBsWMOs32ssr+za17btzWOqUTt2AefZwnFqcal+CHCHgzDQV1CBewdGrLHlKbvgF5/v21f0Ftn3bRmSssJ90ah7mmUOj1CIZQBSiitFiBnLM17bSpDpnGiSbPOq0V9RHJjUHE+0aoYhT62vd4tLkbxpR3lioqS0PuWdnWVaSR/hz6e8i25K7t0uwDJJmgMgbw+S6u8KHlyZv4tPup6VbNzyLzve+RU3d/ZKRdG7QqZaw/OtfRbbby0q1QYmQmZqFcTqHyJUMeBzwDF/Ah4ebcTtrsb5B6PngG1TveTDXQH4Xcy2Wb94qsi25t0zfIQDSDND02hfkuHXapdbi8sVZvNMVxfpti3+yFsc/TqL60cqC6INRsLLwe5Htjp33hcNx/ocZmMaOU+Q4e3wHFpe/Twn/PAtlJYvq+lo/g/yCElbSi0W2dz1QEapq/to0zJMHT1Gzs1vkp9Mxp5KgqfK510z9y/8zEExaf6qHAHNXr8M80f45cUG4MsydzHdWAY/p4B9F3nuB32Zyy/b8DhG+9RzX0U9bRfjf978n6iCKC2/KQgAAAABJRU5ErkJggg=="
+                        title="Courses" />
+                </div>
+                <div>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAEsklEQVRIS62V228UVRzHv2dmdi576fayxW1ha5WShraATUMIRogxQoyIARNQKhiDPuiLiU+GqCSGhAcT9YEH/wIeIFFUEolGIgkFSy1QClZKKZbSsrV0u7fZnes5PzMtmhbLRWFeTmYevp/f9zvfcw7DQzzO2Ip9inZ1F/LWmVullbuTq/pLd8qx/6tPf3R8gkR6L8wJ5EabYQ7Fe1I7u9c8MoB1YdWX+pKhd+x0FOZ4C6xxf6Bhd1frIwNkupsqjHBpzMolYrlrlb8mkpnO+AsDVx8a4Patahdu4U2hOm1Shf+ckw2fjHeMrL9b1A/8D+i3tdV2eeJb/fHoM6BhQAhAcED48Ip0SG3BawtBHgjgXXz+WRY5f1yuf18S5mFI3iWACBDBQiAbEFbk09DK0gf/OSKnZ/12NTV8CMkjEPnPIDmHAM4oEIcgEAdjJKE4mfBjayZ1xsDnQu7pwOnbsFWt6/8ai44DzkUg2wlQIIwZB+QDgYDnVsCcqoSmhl6MrB4+9kAAGn2rDfJXF5E8CLC1QKYW5HFi4vZMPs2kBK6ibNfCzhtM5sqBqvWX37svgGibzH8/OSgvfXcp1L3wMpugeN8TC8wTm40GAOMMjlMJz4vDKWrMvxX5Jrnl3Nb7ApyB9o/UVGIfoj+Clw9CLu6cjSWYfk48godh2zUg0uCUQrCuhy+kdpx96p4AGmqv5YY1KS8+B+JFsOl6Is4xb3oeZK+gXE5AiDCIK3BNjZk3tKnGzt7auwLc/hUdQi1+oSXZOp9XgtxRKCxD7J/pabb6QTRWHL6rMyaFCcKAb4dYcUSlxtd7pAUBNNR6lKoyLwmFz4gochFM2KDb4tydbadXDjqvQngxEI+CSSFIIgwhQpgelFFbzWsrNp+d+hsyUwlvsG2/UmfucYUCzgmMlyDMAjnlShZJyPCKPogyIN+FbAAkGIRjgFsVIKcSMy4ohMwgY7FKbHhsS/dP8wBWf8sl/cl8q+VEAGHDy6Qxfn4RSG9A8+Y98Nx1ENMfQ7iXwae7wMI+NJ3PgJx8DSRUEXcSyI2AaTL7sP7VU/vnAfwrTYflZH6bxyvAfRvwbmK0qw65fD1WvrERTNoBJgHC+QGu+TN4bgxkZSHzHLRoCXKIw842Iz+SAJVwpGHXqVfmAWhg+TJUT1zhhgrXlaFKafgFwmhfDbRUClVNDVC0OAw92AhpTE8DV094YOUsFMNFc1MOerRIt4bamJ1Wext3n149DxC82D2tm7XU6HfCUEF+FgwCVgYwszEUiouh1YVhFiR4ZRnmnz5yExIEJHSsEFBkGaoukWMWmH0j3tf49qn2fwGCD865phY1nu9BzIz4JQeKLuDZgGuHMNJXD09VkE4nEPQwFiXEIoS6WgL3dKiqjuJNBxrRkWRn1/yI5vaWCMw+vWxdkUonwpGbTNENhAxAkhigC4wPNCKqh6BIMnxfhaAQmFDhFQhm2qH4Iu3pmpdPdC/oYC6otxeh8PjyjdWRaweYEnsiEjagxT34PAJuxSF4CL4b7GCG8pS4zMvimBGmz5fsPDN237PozksjcHX9aHOjTEqza4ZryGfV5DPZd2hSlqVho4r1p7b/Yi10o/0FxeFcN++9nA8AAAAASUVORK5CYII="
+                        title="Notifications" />
+                </div>
+                <div>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAEb0lEQVRIS7WVa0xbZRjH/+85BToGLZQOClTLuGe4IchtMSBhurA6EzVxJpotBGUucR8UmS46lkb3yaigQUmmiWNOE0WdxsGAZMSxhAGWy9glk8uAcYDSC7S0hUJ7zmt6GLfAmPXyfnrfJ0/+v/M8//d9DsH/vMjf0CcpgJ87OFg2x/P+3nyeZRcYu93JAS4AdDONBwEkbz+fneumON7aczdvxjHvRwioLCjAHRMlvxYW5H/iZkPv5d8Bz/0gmwHIS/kpqZ03DM0sS+TqmFhmZGgY8y4XCAFYlhEopbPpyRF7aq/26QEIG0HuC4gHAh4v2Hnu5rD9uVBlOBsgleJWby8EYUWHEEITNIrW7glHoclkcvgESAwOVioj5KOsVC41mcxYmJ9fI+4VYxkG0gDWM2Of04zOzo77BNgeEqKRBvgPKZTbyDjHgRCC4gN5eKEwDcN3TXjt5DlRjyEEPBA7YrMN+QQoPXIk7eL5852EYUh1ZTlUoRKEEBtAPeB5AbcHDSh+twbeHnsIiR+12QZ9ApSXlqb99N23nVXvF5H03KcgzHDg7UZQuuiBx8Ojpe0GjlfUwZ+QuD6b7Y5PALVMpkjRKIY/O1USGJWczc6b+iG4ZgC6eO0ppdD33KLvfdrotlqdmmGn0+ATwOthzTvaG9k5mQ+rYnYGum1joO65ZY3JSSOMZjM/PDo58MrHjY94i/IVgO/L959QKLZpd6amZrHgWSp4QAUBlqkpjHFjEECvWW32H1/84MKpf/LQ8INOq4Lg90REePjJqMjwBCrwft53YJg0Ch5e4CxT08cIy7cc0NVv2B4vdNNREaM9pspQL7ycFmo/rJQ4YyilhGFYIvAe3sIHcXqr/OsOs3/N2M8fcr5VoNMx0d1zJcowRWnu7szE+FgN9N3X8UnqbVGn7PoOpKemYODOCFpaO8bM5ulKRrrwOVdbsWLSPeK6CmLyddKFYGd13HZN0d6CPISFhYqpbR1dOLgrUNx/0zuLnKx0cW+xTKOpuQWDQyO/MgueYq6xYmp1NesAkdqymuTE2EPafXuwRSpdzm3v6MLZsmfF86GPfkH2PYD3PDfnQn3DJfzZN9A0niXbB51ueWCtAagKS7VqtapOW/gkwhSLX7602v/owpk3nxGPRRW/ITtzsYKlZbFMob7xEriJidcNdRVfLMXXAKKffqt1v3bv7qTE+HWedei78OXRQjFeUtWArIy1AG+8r38AFy42jXDj9gR0nnZ7YyuAfJ1EvcU6kJOTpVE/FA1FaCgkfhKwLCsOOr2+C1WHC0TA0dPNyMhIF1+z99p6x4bNasMoN4arre0GYHbH3brq6bUAnY5RXTE+xvhJDm7duiVXFRH5aGRkJOQhcshkwejv60flq/ki4I2vLiMpOQkOhwM2qxXj4xMwGAzXnI7ZKx6X68yE0tyD2lp+LWB1U3Q6JrzFmAPwu0BJIsOycRKWVRGGiMZQgU4LgmDgec8gBe0D2F5jXnjbanM39GBd4/+DwIN++v8a8Rc9B9ko2k7tSwAAAABJRU5ErkJggg=="
+                        title="Juan Perez">
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <section id="homePageMainContainer">
+        <div id="headerContainer">
+            <hr/>
+            <div class="headerCourseContainer">
+                <h2>HTML</h2>
+            </div>
+            <div id="overviewHeader" class="headerTopicConainerVisible">
+                <h2>Overview</h2>
+            </div>
+            <div id="topicsHeader" class="headerTopicConainerHidden">
+                <h2>Topics</h2>
+            </div>
+            <div id="forumHeader" class="headerTopicConainerHidden">
+                <h2>Forum</h2>
+            </div>
+            <div id="supportHeader" class="headerTopicConainerHidden">
+                <h2>Support</h2>
+            </div>
+            <hr/>
+        </div>
+        <div id="courseContainer" style="width: 100%;height: 460px">
+            <nav id="navContainer" class="sideNavTopics">
+                <ul>
+                    <li>
+                        <div class="topicsRow">
+                            <img onclick="displayHideSections(this,'videoSection')" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADMUlEQVQ4T3XSf2jUdRzH8efn+8O72253NzfP5tyGus2cnropwqA0iAZF/hEmbSuicmC2oCAI2f5IkrKgGYaNKJqBaBEGBWY4t1ZZVEJ5erfRttux87z2w3Xufv/Y3fcTd/aDSD9/fvi8H7xf789bcIdjffYHZ+/T673ByJLsb6taufr5b121dvngtflY6PoHu0/9XSZuV2/u/bWub88ad2WDw3EtA2fOBvx3hWbjn/es3nz05BgvPdn2T93/gPJDo7WvPbJqzFTrKJ34/gpmDDw1zTQmoxxphaMnf74zUPWWv+6VB5a7Y067I3BplO0zF9EUuGDdgdu2iU+aw5wb9tweWHtsqvbF+yrHZsy20jmPl+3TgzhWrsIQkjIjQ7/cwfl4BZ3atHH6s+ktDLZ7C/GLETYNhGq6WqxXr+bKHJlJD+3KGAlDIRiaIZfP07ptC3aLznNeOz/OOtGSs2H9sntravCZoOgcCr9xd7nWfemmZlV/H+eAZYKq+vW4veNMTU6Sy+e4Z+dO1tU4seRT7PPauBAsQ8wF42po5l3xxHD4+m9RqqtvBnjBGWBFdR1ZqaKqClJKUATW0hLSqQwlqsRqgn1XTJz15CG6GCpGaDq1IM80BRCaTkZomHSNUc8o2aUsiiLQNJ2WlmaySzlsJhWTkqei63KS83tLi0D9iXn5VWsYQ4KBgt1hp/tANx6PGyFUXK5mPhx4j0gkgq5r6IrA2flNmJHOilvAR/Ny6N4YEgVDKDjKbRx5/U2mfJOomkp9QyO9PQeJRmMs0wrxBMsfHV5gpH1FEVg3MCcvtmWQUsFQwG6z09f3NlN+P9HIIk1NLg4fPkQksoiuaaiawLr7ywW+7vgX+OnhwqeKYowCcOydfiZ8PlLJBBs3bqDn4MvEYnE0XcFitiB2fbzAd4/fAhpPzMrxvebiVsiCU2Lj/ePHi4NUFY3NW108tX8/kP9rdRTErtP/BYYeK8fISQwhUCzLGPniHD7fNHlp0NC4lm1tD5FMGUgBaQn3d3z6B0MdlcUOun4pXEEkm09kEjmZzkksqk56CeLpvDWeyuC/ESOWyEKm0IVSeH6DVzc4/wTu7VPW4mqHbwAAAABJRU5ErkJggg==">
+                            <h3 onclick="displayHideSections(this,'videoSection')">Overview</h3>
+                            <img id="ovewviewImg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACFElEQVQ4T8WTb0gTcRjHvz9d7s+5G5IxKtQo0DyC/g20TBmt9ffFYBCBvQmCDmvLTOttvbLIOSVtLV+U+sZXhS8sKFhB5IJCJWRRxLrYORtybpzneW67vKioVWoUvuh5/3x4nu8fghUOWeE+/gPgen4fiCECr3zty/X/dsEVdJ466mkcmxrFy3C4By1g/x5wFazbUR9kbBXoi/ZD4dMQIsmhHCBgGcAntRhe2blI2Fa4D+w5dLeqdje6x4Mooi2QJ2QkxoSBb4B2/aDncKWLLliH1nshPy6km39A2mCv22p/sm+vE52vA6BNZqSFND6+SDzGWcVBSFfhwwZHyX7bJhEZUoxXUStu3n8WQItyBj6UVZQyH0666nGL60dWp0GTCPjhOAePvPGriHnd5uDxGiNbxxSAS2WRb7CA50vQOxTqXWMtdV461rA+OHkboraAvLQOseF4VEvMMriMTM6Fdn2Hu5Y+V1VJgZ9RoekpCPEybLFuQ1gN4a0kQCMU+PBESpUzO+Gd576/mBPRZ7pxsKbw9PbNZsREBSbDWiRVDe/kaSysovDmaRyqmLWhcW7kZ5F/tdFn9Nt30U1MOY3YTAaSRqDojBh/PgVlUjmC5rkHvzu0OAcdhjvVtqITG8otSGYIRkYFTL+XWDTN9yzVm6WD5DcO7qhe7UpJKriIeBHnlbblSrd8EruoRyCEg2eW/VNjPwPOxsWm46r/EQAAAABJRU5ErkJggg==">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="topicsRow">
+                            <img onclick="displayHideSections(this,'topicSection')" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADd0lEQVQ4T23TbUxbVRjA8f8tLW3CLYlh2SrI3HAbsgyQCbqNl8Ek2YziNnEqsC6+LFlEZHHRYIzum4bEGZcwXZzo4qfFxA8a1KgzGUpl4gr0jdHXwSzQ1ZbXW6SF3ntN77YPJubkyTk5yfk9zzknj9DyuStisZjNAXdY3ZAnUrjVQjKRRABUQNEis4JsQ3aWbzIevjo8VTFzoemfzJ7Q/pU36ZhcMrptPqzWnVTt2858bIU0IMsKigppRWVNVjCYspkKRfnsy2AdXzcOaEDbF07JHVoUg0N+nmmtoLS+nLn4knZQVjKhaHMGMJn0jHqTrNj6LUO9rVENsPY6JFdoSQxd83Lw+YfZ0VDGQly6k1lBkSGtVaKizzXz/eXp1UvicdsjOUuxyLnoS0LbhWHJFZgXb9j9NLU+yva6UuZn71Qgq8iyiiLL6I1GfhmTOVK4yum8fpZPtJG9uG5EaPnELrkCs+JNu48DR/dQkgFii6jK7bsrKAh6AzZfHi8UneHNB7sZz4mgnO+l4P12hOd6hiSHd1YMj/rYf7SabTWlLMTuvoGMTp/FQHA9xzf38EbjKfCludaXT6TZT/HbrVVC89k/JJcvJv7l8LO/pZottXcBFVVnYDC0jpcf6KGrsRPVk82Co4ikx0us4ZW68gPnB4RDHw5KzvG/xelRH43Hatm8u4yF2UUQ9Nhn1tNReo6OytdQxgwsj25kwp3AtBo9XHyWb7RfaPrAJjndt8SIO0C9tZZNu8qQFhJ458y8uO0inVWdKB4DieECuBGhxtXFiqzfEew7PaYBT3QPSA73lBj1BKltq2fj7lICM1k8ZLjCx4efQnFCwrEJOTDNkdRHjFiaSXx3uWqt/5hdAx7v/k1yusJizBNiV8teCvZWMj44wU/W+9hgeBd++JTFcYWD89349nRyz7SD2I9XK+NXTg7/B4iPhdj5bA25DQ0k3jvF710mKLHwa+8l3vE/yfXq18k3RElMRkj02/8H8ASpsD6Gcm8xJa/ej25LIbpDHXyrNJBjMZNDipROYPXWLMmBkcr4z+23K2g6M5gcHpkwzl0PsvXpfeRVlTHtDJMuLCQlLZNrUllLJVlLpUkbDKwGbiL8OVQbs71l04Dyk32RWHzZvDzpV5F1GPOLkNU1SKdR06rWA6gqmYEiZJFOhnNEY8VM3wmtnf8Fhs3PAAENUg0AAAAASUVORK5CYII=">
+                            <h3 onclick="displayHideSections(this,'topicSection')" style="margin-top:0px;float: left;">Topics</h3>
+                            <img id="topicsImg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACFElEQVQ4T8WTb0gTcRjHvz9d7s+5G5IxKtQo0DyC/g20TBmt9ffFYBCBvQmCDmvLTOttvbLIOSVtLV+U+sZXhS8sKFhB5IJCJWRRxLrYORtybpzneW67vKioVWoUvuh5/3x4nu8fghUOWeE+/gPgen4fiCECr3zty/X/dsEVdJ466mkcmxrFy3C4By1g/x5wFazbUR9kbBXoi/ZD4dMQIsmhHCBgGcAntRhe2blI2Fa4D+w5dLeqdje6x4Mooi2QJ2QkxoSBb4B2/aDncKWLLliH1nshPy6km39A2mCv22p/sm+vE52vA6BNZqSFND6+SDzGWcVBSFfhwwZHyX7bJhEZUoxXUStu3n8WQItyBj6UVZQyH0666nGL60dWp0GTCPjhOAePvPGriHnd5uDxGiNbxxSAS2WRb7CA50vQOxTqXWMtdV461rA+OHkboraAvLQOseF4VEvMMriMTM6Fdn2Hu5Y+V1VJgZ9RoekpCPEybLFuQ1gN4a0kQCMU+PBESpUzO+Gd576/mBPRZ7pxsKbw9PbNZsREBSbDWiRVDe/kaSysovDmaRyqmLWhcW7kZ5F/tdFn9Nt30U1MOY3YTAaSRqDojBh/PgVlUjmC5rkHvzu0OAcdhjvVtqITG8otSGYIRkYFTL+XWDTN9yzVm6WD5DcO7qhe7UpJKriIeBHnlbblSrd8EruoRyCEg2eW/VNjPwPOxsWm46r/EQAAAABJRU5ErkJggg==">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="topicsRow">
+                            <img onclick="displayHideSections(this,'forumSection')" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADHUlEQVQ4T33Te2wUVRTH8e/dmdnZV7ezKZsWusUQwRqQhBotwQoxGlpFeRZjCqXxhUkTH4kJ+I/xCYmJjUYxIOiCsSSSCCUNsTQQbQ2WsoTwiKIGaxv62BbZlmXZ2W13Z+aa9o/VQML979yb8zm/P84V3OU8v2rlEuGmS1qOIYQAIXEced1x5OrWjq7YdKu4G9DwxMM9qQyPOFYOVdNwe3R0j4JjSfvQiVPqHUBNzZoiKc21UohWXUyiZxPDtqJEvtrVhG0rNDbuRg8V4XcLPLpe0dYdGy4kqK2t9afTVq/tWIvTkzmyWQsnn2PlijL2HdiMnNK5fHaQ7/ae4GTv77y146M1Gzc1HSsA1Q8uW593yTbTzDE77OfeeSE6ugYoCah07nmMoOHFW1yMlk2x9eUDGMs2lba0tPxTAO5Z8IC0LIl5c4rOo40sXbGUMydjPLf1CEe3z2ZuiQsnEEKXk7z+fi/nR/JbfhsdP1gA6levv7z28fDCzc8uxFVaBDdSEA6x++3jPMQV7psfxj/LT/SnUfa3DzIe0NJOSoQLwNCHka8jzdtfItkPEwmQUxBQGe9JEPuhjzmGmzFFErB9/PHjCPaN5DfNZv6F/4AdkfrI8urDZOKAB1QVlCypgwOY9XXkh+PYC8qYM6ign4lD+8UEo2OVBaBq3/Vvj12r2lJeVQ4TQ6A5jPSpRMe28Y7TSvqzp8n0moQ+PYU2S4OMTfLQuU9mgJpdf7U21M1vDBtQs7eCVMmTDMUnOF/9AReqFjH388N83N4EugGGF/w6BL2Mdv09LO5/92zna89U1hllQX65CrYBeQXcCviyUGTBaeDFna/QcCkKoYqZlcancu3XBGLDFxfkulVL6PjTnL7DJW9bbgG3Svz42zuJ7nwKGQySEQJTCq7eTPWLbW0DZjpc7usfSeLVXHd+DSmRwWImrgzk33x1seYjRxKwYJ0PfhYbv7wo48XlpAFlut1xYDqFAKkoM7WSyxK/JWTlkf3u7u73rP9PEfOav1+eyMg33H7Po0JSii9QeBfZNEKofUxNxlQp98Sj9T23R/wXi6dBeo2Unb8AAAAASUVORK5CYII=">
+                            <h3 onclick="displayHideSections(this,'forumSection')">Forum</h3>
+                            <img id="forumImg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACFElEQVQ4T8WTb0gTcRjHvz9d7s+5G5IxKtQo0DyC/g20TBmt9ffFYBCBvQmCDmvLTOttvbLIOSVtLV+U+sZXhS8sKFhB5IJCJWRRxLrYORtybpzneW67vKioVWoUvuh5/3x4nu8fghUOWeE+/gPgen4fiCECr3zty/X/dsEVdJ466mkcmxrFy3C4By1g/x5wFazbUR9kbBXoi/ZD4dMQIsmhHCBgGcAntRhe2blI2Fa4D+w5dLeqdje6x4Mooi2QJ2QkxoSBb4B2/aDncKWLLliH1nshPy6km39A2mCv22p/sm+vE52vA6BNZqSFND6+SDzGWcVBSFfhwwZHyX7bJhEZUoxXUStu3n8WQItyBj6UVZQyH0666nGL60dWp0GTCPjhOAePvPGriHnd5uDxGiNbxxSAS2WRb7CA50vQOxTqXWMtdV461rA+OHkboraAvLQOseF4VEvMMriMTM6Fdn2Hu5Y+V1VJgZ9RoekpCPEybLFuQ1gN4a0kQCMU+PBESpUzO+Gd576/mBPRZ7pxsKbw9PbNZsREBSbDWiRVDe/kaSysovDmaRyqmLWhcW7kZ5F/tdFn9Nt30U1MOY3YTAaSRqDojBh/PgVlUjmC5rkHvzu0OAcdhjvVtqITG8otSGYIRkYFTL+XWDTN9yzVm6WD5DcO7qhe7UpJKriIeBHnlbblSrd8EruoRyCEg2eW/VNjPwPOxsWm46r/EQAAAABJRU5ErkJggg==">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="topicsRow">
+                            <img onclick="displayHideSections(this,'contactUsSection')" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADHUlEQVQ4T23TX2xTBRTH8W9vb7t1La6Ord7Rv3ZzZc7IHGNBp4xkGpWXqWQQ1Acj/g8mCPFPYjIlJuKDMUZjYkIUMMtgC7KAiTEoRsKYbBELAko32AZr7di6lt32rr29va1hiYuynseTk09Ocn7HQJF6fzglnZhIB+oc4narkLt7cFI/dPoZ6d1is4Zbm237w/c/fI/txVBMqwvGcq3Tk0kspUb52vaa8qLA+u6wy2kRWy1lxi2S3dShajp7zsr4RQ1HQeN8PEtkNo/Lc/u58A5/462I4aPTNxJ3+srtQ1MqwYkUF6IqXWvK2LYaUGbRpmZoOmrmQthIjdvWd+WN2s3/RQydR6J628pK4c9MgdHIPH6zzpftFfSdjxNOyOzwz/HCQJ6vfhMQSgvULit7aeSdwJ5/EUPNZyNpR4W19O1HVnBoTCUtK0hini9+V9nsh4Prkzx+WOeHMRMwR5lgZEWJ6YHLXff+ehMxVLw5vCtutnW91+GhutrKj2MKM3GVi9dVjraLNNtT+Lo1ojKQ1yGbwiqYcBRUafzDtdcXrmB6feia6Ktyf73RzR9KgfFYhqGrGXrWmVlrV/B/ozIu6xgLBXQtA7rKbTmjLFvmli8AztdONUZKSoItLS52td9B79UMsZk0UUXnWa/OlajCvhHI5XQyWh6y85AvUK5k+xdzYN16fK8iSc+9tcFDk99GTyiJMaNz+FER9BhNe/NcSgikswaIJ4Ektox+aRFo6OwzX7RXzQl1ntJ9T3kY1wROTSi8UgvTKY2dwyKZqb+pzk3xdEBga7ODxz6NrvxfEm0b+zel3K7eVatdfLJBon8ajo+mSUUirEkEeaK+nCcbndh8DQtXbNh2rGdJlEs6j/yi1te2bXnISz0TpIMDtDrNtDTfR5VPAnMlQ5dn+W4gyu5vQ6NLgGXt+5cnvd6Ye5WbbucggbucYLGj5EUOBFW+PznD4Lnpn4ildxN69eclwMJuD3bvbOwIfHxsk8jJkErv8A36BuQQCaWfXPYDzrw8v5jEYh92s2ft6Dnh8Vau++vM5OcohoOcfX6w2Ow/twZJmJ+ukX4AAAAASUVORK5CYII=">
+                            <h3 onclick="displayHideSections(this,'contactUsSection')">Support</h3>
+                            <img id="supportImg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACFElEQVQ4T8WTb0gTcRjHvz9d7s+5G5IxKtQo0DyC/g20TBmt9ffFYBCBvQmCDmvLTOttvbLIOSVtLV+U+sZXhS8sKFhB5IJCJWRRxLrYORtybpzneW67vKioVWoUvuh5/3x4nu8fghUOWeE+/gPgen4fiCECr3zty/X/dsEVdJ466mkcmxrFy3C4By1g/x5wFazbUR9kbBXoi/ZD4dMQIsmhHCBgGcAntRhe2blI2Fa4D+w5dLeqdje6x4Mooi2QJ2QkxoSBb4B2/aDncKWLLliH1nshPy6km39A2mCv22p/sm+vE52vA6BNZqSFND6+SDzGWcVBSFfhwwZHyX7bJhEZUoxXUStu3n8WQItyBj6UVZQyH0666nGL60dWp0GTCPjhOAePvPGriHnd5uDxGiNbxxSAS2WRb7CA50vQOxTqXWMtdV461rA+OHkboraAvLQOseF4VEvMMriMTM6Fdn2Hu5Y+V1VJgZ9RoekpCPEybLFuQ1gN4a0kQCMU+PBESpUzO+Gd576/mBPRZ7pxsKbw9PbNZsREBSbDWiRVDe/kaSysovDmaRyqmLWhcW7kZ5F/tdFn9Nt30U1MOY3YTAaSRqDojBh/PgVlUjmC5rkHvzu0OAcdhjvVtqITG8otSGYIRkYFTL+XWDTN9yzVm6WD5DcO7qhe7UpJKriIeBHnlbblSrd8EruoRyCEg2eW/VNjPwPOxsWm46r/EQAAAABJRU5ErkJggg==">
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <section id="videoSection" class="lessonContentVisible" style="height: 460px">
+                <article>
+                    <p>
+                        Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications. With Cascading
+                        Style Sheets (CSS) and JavaScript it forms a triad of cornerstone technologies for the World Wide
+                        Web.[3] Web browsers receive HTML documents from a web server or from local storage and render them
+                        into multimedia web pages. HTML describes the structure of a web page semantically and originally
+                        included cues for the appearance of the document.
+                    </p>
+                    <div class="videoContainer">
+
+                        <div>
+                            <video controls poster="images/poster.jpg" src="video/30seconds.mp4" />
+                        </div>
+                        <div>
+                            <ol>
+                                <li>Creating Your First HTML5 Webpage</li>
+                                <li>Styling Your First HTML5 Webpage with CSS3</li>
+                                <li>Understanding the HTML5 You Wrote</li>
+                                <li>Working with Paragraphs and Text</li>
+                                <li>Defining the Structure of Your Document</li>
+                                <li>Working with Figures and Images</li>
+                                <li>Working with Lists</li>
+                                <li>Creating Tables</li>
+                                <li>Creating Forms</li>
+                                <li>Form Validation and Other Future HTML5 Form Enhancements</li>
+                                <li>Understanding Cascading Style Sheets</li>
+                                <li>CSS3 Font and Text Properties</li>
+                                <li>CSS3 Color and Background Properties</li>
+                                <li>CSS3 List and Table Properties</li>
+                                <li>CSS3 Box Properties</li>
+                                <li>Working with CSS3 Font-Face</li>
+                                <li>Embedding Video in HTML5</li>
+                                <li>Working with the HTML5 Canvas</li>
+                                <li>Working with SVG in HTML5</li>
+                                <li>Where to Go From Here</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </article>
+                <p>Video and Topics from
+                    <a href="https://mva.microsoft.com/en-US/training-courses/html5-css3-fundamentals-development-for-absolute-beginners-14207?l=Y4COscFfB_7500115888">
+                        Microsoft Virtual Academy</a> Examples
+                </p>
+            </section>
+            <section id="contactUsSection" class="lessonContentHidden" style="height: 460px">
+                <article>
+
+                    <div class="contactUsContainer">
+                        <div>
+                            <p>
+                                A call centre or call center is a centralised office used for receiving or transmitting a large volume of requests by telephone.
+                                An inbound call centre is operated by a company to administer incoming product support or
+                                information enquiries from consumers. 
+                            </p>
+                            <fieldset>
+                                <legend>Fill a ticket</legend>
+                                <div style="width: 100%">
+                                    <div style="float: left;width: 20%">
+                                        <p style="height: 20px">
+                                            Email Address:
+                                        </p>
+                                        <p style="height: 20px">
+                                            Country:
+                                        </p>
+                                        <p style="height: 20px">
+                                            Phone Number:
+                                        </p>
+                                        <p style="height: 20px">
+                                            Availability:
+                                        </p>
+                                        <p style="height: 20px">
+                                            Topic:
+                                        </p>
+                                        <p>
+                                            Question:
+                                        </p>
+                                        <p>
+                                        </p>
+                                    </div>
+                                    <div style="float: right;width: 80%">
+                                        <form action="#">
+                                            <p style="height: 20px">
+                                                <input type="email" placeholder="your-email@gmail.com" required />
+                                            </p>
+                                            <p style="height: 20px">
+                                                <select>
+
+                                                    <option></option>
+                                                    <option>Argentina</option>
+                                                    <option>Mexico</option>
+                                                    <option>US</option>
+                                                </select>
+                                            </p>
+                                            <p style="height: 20px">
+                                                <input type="tel" />
+                                            </p>
+                                            <p style="height: 20px">
+                                                <input type="time" />
+                                            </p>
+                                            <p style="height: 20px">
+                                                <select>
+                                                    <option></option>
+                                                    <option>Creating Your First HTML5 Webpage</option>
+                                                    <option>Styling Your First HTML5 Webpage with CSS3</option>
+                                                </select>
+                                            </p>
+                                            <p>
+                                                <textarea></textarea>
+                                            </p>
+                                            <p style="text-align: right">
+                                                <input type="submit" value="Submit" />
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+
+
+                            </fieldset>
+                        </div>
+                        <div>
+                            <img src="images/poster.jpg" />
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <section id="forumSection" class="lessonContentHidden" style="height: 460px">
+                <article>
+
+                    <div class="forumContainer">
+                        <div>
+                            <p>
+                                An Internet forum, or message board, is an online discussion site where people can hold conversations in the form of posted
+                                messages.[1] They differ from chat rooms in that messages are often longer than one line
+                                of text, and are at least temporarily archived. Also, depending on the access level of a
+                                user or the forum set-up, a posted message might need to be approved by a moderator before
+                                it becomes visible. Forums have a specific set of jargon associated with them; example: a
+                                single conversation is called a "thread", or topic. A discussion forum is hierarchical or
+                                tree-like in structure: a forum can contain a number of subforums, each of which may have
+                                several topics. Within a forum's topic, each new discussion started is called a thread, and
+                                can be replied to by as many people as so wish.
+                            </p>
+                            <div class="datagrid">
+                                <table cellspacing="1" cellpadding="1" style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>Forum</th>
+                                            <th style="text-align: center">Messages</th>
+                                            <th style="text-align: center">Topics</th>
+                                            <th style="text-align: center">Last Message</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="alt">
+                                            <td>
+                                                <a href="#">HTML 5 new tags</a>
+                                            </td>
+                                            <td style="text-align: center">708</td>
+                                            <td style="text-align: center">12</td>
+                                            <td style="text-align: center">Fri, 27 August 2010 By:userTre</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="#">How to use audio?</a>
+                                            </td>
+                                            <td style="text-align: center">708</td>
+                                            <td style="text-align: center">12</td>
+                                            <td style="text-align: center">Fri, 27 August 2010 By:userTre</td>
+                                        </tr>
+                                        <tr class="alt">
+                                            <td>
+                                                <a href="#">Common issues</a>
+                                            </td>
+                                            <td style="text-align: center">708</td>
+                                            <td style="text-align: center">12</td>
+                                            <td style="text-align: center">Fri, 27 August 2010 By:userTre</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="#">Common usages of DIVs</a>
+                                            </td>
+                                            <td style="text-align: center">708</td>
+                                            <td style="text-align: center">12</td>
+                                            <td style="text-align: center">Fri, 27 August 2010 By:userTre</td>
+                                        </tr>
+                                        <tr class="alt">
+                                            <td>
+                                                <a href="#">HTML 5 new tags</a>
+                                            </td>
+                                            <td style="text-align: center">708</td>
+                                            <td style="text-align: center">12</td>
+                                            <td style="text-align: center">Fri, 27 August 2010 By:userTre</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="#">How to use audio?</a>
+                                            </td>
+                                            <td style="text-align: center">708</td>
+                                            <td style="text-align: center">12</td>
+                                            <td style="text-align: center">Fri, 27 August 2010 By:userTre</td>
+                                        </tr>
+                                        <tr class="alt">
+                                            <td>
+                                                <a href="#">Common issues</a>
+                                            </td>
+                                            <td style="text-align: center">708</td>
+                                            <td style="text-align: center">12</td>
+                                            <td style="text-align: center">Fri, 27 August 2010 By:userTre</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="#">Common usages of DIVs</a>
+                                            </td>
+                                            <td style="text-align: center">708</td>
+                                            <td style="text-align: center">12</td>
+                                            <td style="text-align: center">Fri, 27 August 2010 By:userTre</td>
+                                        </tr>
+                                        <tr class="alt">
+                                            <td>
+                                                <a href="#">HTML 5 new tags</a>
+                                            </td>
+                                            <td style="text-align: center">708</td>
+                                            <td style="text-align: center">12</td>
+                                            <td style="text-align: center">Fri, 27 August 2010 By:userTre</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="#">How to use audio?</a>
+                                            </td>
+                                            <td style="text-align: center">708</td>
+                                            <td style="text-align: center">12</td>
+                                            <td style="text-align: center">Fri, 27 August 2010 By:userTre</td>
+                                        </tr>
+                                        <tr class="alt">
+                                            <td>
+                                                <a href="#">Common issues</a>
+                                            </td>
+                                            <td style="text-align: center">708</td>
+                                            <td style="text-align: center">12</td>
+                                            <td style="text-align: center">Fri, 27 August 2010 By:userTre</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="#">Common usages of DIVs</a>
+                                            </td>
+                                            <td style="text-align: center">708</td>
+                                            <td style="text-align: center">12</td>
+                                            <td style="text-align: center">Fri, 27 August 2010 By:userTre</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="4">
+                                                <div id="paging">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>Previous</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="active">
+                                                                <span>1</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>2</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>3</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>4</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>5</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>Next</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+            </section>
+            <section id="topicSection" class="lessonContentHidden" style="height: 460px">
+                <article>
+
+                    <div class="topicContainer">
+                        <div>
+                            <p>
+                                An Internet forum, or message board, is an online discussion site where people can hold conversations in the form of posted
+                                messages.[1] They differ from chat rooms in that messages are often longer than one line
+                                of text, and are at least temporarily archived. Also, depending on the access level of a
+                                user or the forum set-up, a posted message might need to be approved by a moderator before
+                                it becomes visible. Forums have a specific set of jargon associated with them; example: a
+                                single conversation is called a "thread", or topic. A discussion forum is hierarchical or
+                                tree-like in structure: a forum can contain a number of subforums, each of which may have
+                                several topics. Within a forum's topic, each new discussion started is called a thread, and
+                                can be replied to by as many people as so wish.
+                            </p>
+
+                            <div style="float: left;width: 30%">
+                                <ol style="overflow-y:scroll;height: 300px;width: 300px">
+                                    <li>
+                                        <a href="#" onclick="displayExample('gridExample')">Grid, Transitions &amp; Transforms</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="displayExample('animationExample')">Animation</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="displayExample('arrayExample')">Array &amp; Object</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="displayExample('promisesExample')">Promises &amp; Transforms</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="displayExample('webWorkerExample')">Web Worker</a>
+                                    </li>
+
+                                </ol>
+                            </div>
+                            <div style="float: right;width: 70%" id="examplesContainer">
+                                <div id="gridExample" class="example" style="display: none">
+                                    <div class="gridCalculator">
+
+                                        <div class="gridHeader">
+                                            <div>
+                                                <input type="text" /> </div>
+                                        </div>
+                                        <div class="gridBody">
+
+                                            <div class="calcNumber">
+                                                <button>1</button>
+                                            </div>
+                                            <div class="calcNumber">
+                                                <button>2</button>
+                                            </div>
+                                            <div class="calcNumber">
+                                                <button>3</button>
+                                            </div>
+                                            <div class="calcNumber">
+                                                <button>4</button>
+                                            </div>
+                                            <div class="calcNumber">
+                                                <button>5</button>
+                                            </div>
+                                            <div class="calcNumber">
+                                                <button>6</button>
+                                            </div>
+                                            <div class="calcNumber">
+                                                <button>7</button>
+                                            </div>
+                                            <div class="calcNumber">
+                                                <button>8</button>
+                                            </div>
+                                            <div class="calcNumber">
+                                                <button>9</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="animationExample" class="example" style="display: none">
+                                    <div class="flexbox">
+                                        <div class="">E</div>
+                                        <div>x</div>
+                                        <div>a</div>
+                                        <div>m</div>
+                                        <div>p</div>
+                                        <div>l</div>
+                                        <div>e</div>
+                                    </div>
+                                </div>
+
+                                <div id="arrayExample" class="example" style="display: none">
+                                    <button onclick="createAnimals()">Create Animals Array</button>
+                                    <select id="animalSelection">
+
+                                    </select>
+
+                                </div>
+                                <div id="promisesExample" class="example" style="display: none">
+                                    <p>
+                                        Http request to GOOGLE MAPS API
+                                    </p>
+                                    <button onclick="executeGetRequest()">Call</button>
+
+                                    <p style="font-size: 32px">XML</p>
+                                    <div id="responseXmlContainer" style="overflow-y:scroll;height: 75px">
+
+                                    </div>
+
+                                    <p style="font-size: 32px">JSON</p>
+                                    <div id="responseJsonContainer" style="overflow-y:scroll;height: 75px">
+
+                                    </div>
+
+                                </div>
+
+                                <div id="webWorkerExample" class="example" style="display: none">
+                                    <button onclick="startWorker()">Start Worker</button>
+                                    <button onclick="stopWorker()">Stop Worker</button>
+                                    <div id="result" style="padding-left: 30px;width: 300px;height: 300px;">
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+        </div>
+        </article>
+        </section>
+        </div>
+        <footer>
+            <div class="footerContainer">
+                <div id="agreement">
+                    <div class="copyRigthRow">
+                        <p><a href="#">Copyright © 2018 Free Education</a></p>
+                    </div>
+                    <div class="termUserRow">
+                        <p><a href="#">Terms of use</a></p>
+                    </div>
+                    <div class="privacyRow">
+                        <p><a href="#">Privacy</a></p>  
+                    </div>
+                    <div class="emptyRow">
+                        <div style="float: left;width: 35%">
+                            <p>Powered by</p>
+                        </div>
+                        <div style="float: right;width: 65%">
+                            <span class="poweredBy">FreeDev</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="socialRow">
+                    <ul>
+                        <li>
+                            <a href="https://twitter.com" title="Follow us on Twitter" style="text-decoration: none">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADZklEQVRIS6VUTUxUVxT+zn1vkJ8WAlZCi9VRnEGZ6GA13Zg00SZtXRAbo+gwRDfGn6Vao9F2pUbrwujKxHRRq/OGQGJi0tjUWhd1oRtlHijK8BMGFFDxdxB1YO4xd5DxMfNmgPSs3nvnO9937vfOuYQssaihtYKYfSx5tWCukqDPIMAMGtLAdwFcEySD933LezLRkF1CEQuWJ8BYn62BRE5KliQaHYjvv+f/KpKKTxNwG+ZWSJyBQN6U5BaABF4T0fYO3zLDWjdJwG2EDgB0bCbE6VjeG66rPjnxPSngDphbQDj3/8g/VDN8Yb+3Qb0lBNyBloVgvjNTWzI1I6UcZk2v6vIt7UsIuIzmJoLYMJPuXUW5yNMF2p6/wZjktFIGBzrqquspMTFjYx0QImmXeqqZX4xLPc/TCgtzNJz5xomVcwoSuQfDMQQ7n6Is34Gjt/rxUUrKOOlOchnmIQKOWJm+/CQHV2sW42zbY5xufTSpw19WlKPePXuSsDrA330vcLx5AIMjo8kcE/aRKxC6SkTfWisKHAI313uQIwjdr97ht3tPcKXvJaKjcVz83gVPSfoEb/qnE6GhkRRh+Re5L4QGIKjMmlHe7qgqxS5PafJznBm90RhK8xxQDVhD2eJpaIXCpESEFhlmTAAOa6J4lo7rPy6BLmh8zKaISDSG7/68n4YixoitgELu8ZYlTjGduBB+isO3HtoLVBgt/Rr489Ss8v/UqvlYM7cw6ymULTWXw+h69c6ul4jtT55AHv56LmorSrIe4vf2IRy73Z8Jc5ncAfMgCEczIdaUF+LnFV+gvCAnDXJ9IIqd//XYLto4mH+iyj/MBSxkl3XR1B4s+HQWKotzsc5ZDLW11lC2qM5PmoOZySXiEnCO30VBsxGMjRMkGhF+mFeEtfOKsLQkHyW5Ot6OSfQOx3BjcBhN3c8Qidp6/rEPxvmw37slIbA42OxkKe4yIX86UzMVRkJGhU5LwrXVD5NjXmmE6hl0fqri6eSJqbbdv6xJYSftkcsw9xFwYjokmTAE7G6v856ayKctamWgxQ/w2ZnapWzRQNva66obreK2N4H6JzKu/QrEN1qny75rKRkUZEkHOuu9D1IxWa+axAjr2Azm1SCqkkCpiEsJDU+ItTYQ/h3VtYbuWk9vJsveA68NR3WAztBbAAAAAElFTkSuQmCC">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/" title="Follow us on Facebook" style="text-decoration: none">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACuUlEQVRIS7VVT0gUYRT/vW/aIOkYUXTRIio7lQm5s2QSeIiIyPwz6z+wbF3yImVJXYIUyUMEhbtbhwhzd3FvQXXJwnDXokMe0oIQ00wPJQWWB535Xswsa/7ZndGkOc3M+/353vve+z6CzeMuD+0SxBoTigDkSmCLkJIl47tQaAigFwZz5HXU/zmTDKULmMJMRocgcdpuAcmYZBB6GPJKItw4thy/wkDVQrUABwBschb/i5BS/haknI9HfeHFvCUGHi3UwuD2tQgvxzJwMRFpuJX6v2Dg8QZrmPFwPeIpLhNribA/an5bBh5v505m8X61ZXG5FIs4N2+kXY8EfrnYyH0VvfAlaaAFYwycsVs9EXChsgAnju7F5qyNFtTjDdlRuuORhioyO4aE8QkQaTsqpVCYn4O2puIlgrYGElIhI5vcWuAagVqdal9Xcgh1JXmY/jmL1sBL6IbEu+FJexqjmdzewHNiOpZxUAjI278Dxwv3oFjdjZHxadx5NGAZDH6YsjWQxM9I1YImalsmpKII9HXVrwiPTvxA9eUe+wwkjZFa3jkHIVyZkEIQeh+chWlkvjMDum6g7+0ort/ttTcgOetokFKoL8tH7amDVlkabzx22rJk3DQoKOucFIrY7sT4JwOzRE6bvK4MJJ6S6g1dBXPb/8iAQJfoSPX9HEOfH3EatLWWSEIaUriyrelVtaDZb6V2WZhDVn3yAAY/TqGp/YlTwmCirkTYV2MZHK4IZCuCh8Aiy5G5KoCckTrtG4j5vy6cP24tWEVA16r4DiAiKusP+2JWpy7GqlqoGeCO9ZlQUzziu53SWHllegOVAN9be7nkDEDn4hH/kvMj7RFt7gkR3RSQpU7dBQkJgYgulJY33fUTy7O3vQOSLWxUMFBEQC6k3CqFkIrB33gDDTNzr9BFtD/mG89U1j/WBxoOUvQYFQAAAABJRU5ErkJggg=="
+                                />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/discover" title="Follow us on Google +" style="text-decoration: none">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADi0lEQVRIS6VVa0yTVxh+3lPKKFgjTgWWZSm0Zhmb0ZlIWqLZClsGfjCXRQxMlERRlxCXLBsbA6PZxSlkcf7YsoT9WBbjvCaLSnE/YH8gFNDdvGzGtty9jksIlEvX75zlfKHdCv1ajO+/73vf8zzv5TnvIcQwT2GulQhlxISTC2Qz8BUAEwIYhsBNYviZBcWpzJ86+/RgKJpDAjMmGgC8GSsB6eOAMAg6C+DDrOaO/vnxCwi8ir1CcPqGMZjigc/z+yGw19rs/uH//yMIfJsdNSAceUTgyHAS71mbOo+FfoYJvEWOnSTw/WOBzx0WoDKbq+O0/NQIbisbs4irN+K1hYxGgP4rWgQCOvnwSZHAs20Xrgxq0T7FcQ7AVr3slzhfAxkTkbAyDcu2VWDm2i8Yv3QeU93tWL5jL6Z/v4rp679GHOegk6tdHeUkFQMmPGyumvkkKZvysbTgDdyr26+5UrdXwpxXiMF9pUgt34Ok59ci+PA+pn/rxkSLK3ycc3BKDFqoR7HXCdBnetmnf3wMUFXc/6RaC5FVPPPdj3hw9ADU0RGYC15HwHML039cRWCgNwKGgGryKfYWgPL1CNJqP4dpzXr0V2yBCMyCnkhC5vlWDFWVa4CymtkeDwJ93oUQhMvkURz3GJCuR5CYaUPGp8e1Po+d/BZLnAXg/kmMXzgTV3AcvJ98ikNKwRgrmiWZYHoxByuqPsDMX9fw4PBHccG1W84xtSiCEFpa3REkb8jF8FcNEQPVY9MIvIrjLgEZui2y2GB+VYE6NgI+MwPTC+uQsjEPI41fYvyiVLe+zbVIf8iJFhueOvo1ht6p0KQYsid370ey4yUMVupendCdbpYyrRWgw9HySH1rN8yvKBjYFblUjRlPI/3QFxh8uzRmBQR6n/qKczL/4QZftIuWkvsypEwf1h/EZFtLGGxZyQ6oY6Mx58A5VwFYQqtC7vOSaOlInS8t3qrtIHmx+JQf/q42+NtaY2YvCCdsTe6dGkFvgd0SJLrJGJIXpb94QZxPBA3suWeb3HfCq7FHyS0XECfinV2Mn4BtWS63JrGIB8e72VFNBPlUPo69a3W5j4cAFjyZviL7dq5S4yO3i/MJIqrMau6U8wxb1EdfzkQ1UL0ASvTWeAhBrmUwOgWu1qy+3DU0v/SoBKEgKWFVGEq5ICfjIhsMqwCVA4a/IfCnYKKVKOG09VL7gF5P/wUVx04TwcWsYQAAAABJRU5ErkJggg=="
+                                />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/" title="Follow us on Youtube" style="text-decoration: none">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAC9UlEQVRIS7WV20sUYRjGn/ebUVFrzW6SknZN2zHUtCx11hAijLQjFUEUROZN3XQVZBRBZf9BIIFddBnRgcqMuqz1VCma2C6yrjelN0JuJw/zvTGzue2p0TWay/d7vuf3fO/7zQzhPz9k588AdRdqHkhuZIhyyPk1RAqDeRKCBojFs+rgSA8B/DefpADTuMelHZDgViIqsQthSAyqCrfUBPwdyXQJAG9+fiYp2bchcDKV7hHLO1Mqn2scHZ2J3hcDsMzTs56BaWcq5gtayfzyiyr3R0MiAKvfTu1uqsmTBGnXx3zNC/UIoNulHWTCo+Ukj9/DjAZP0Ndp1i2Amb7L5R5abKBLhRMwUD3m22reLgvQVajVQuJ1vEFG/jqs3rMbqsMBkZEBKEpYYhiQMzOYn57GVEcnZj59TmBL4qragL8vDChwtwJ0KV5V9vg+sstKbYOH3vdj+OjxBA0zX/UE/dcsgLeg+CmB98arqv0fQKpqlXluDqH+ATiqtsfIjG/f0FdWmRiC6KEe+Hg4DHAW9ZFQtkWrRHo6qj4ORkry+w/0lm7BqrodWH/xArKKtfAaM7oLNyUACOiqGfN5wi1yab0gxERLBnin12Ft82nkNZ2Ckp1tCwCzVw/6a8MAp/sJBO1LaJFvCJSWFg5qGDBCX6GuyllSi5j5gSfoP/J7yNp1AJfjAaUP72FF+Wb7Ib99h+FjJ5JpruhjvhsW4I2zWBeCvfGq9Lw85NbvgupYaV1Ta+BE1mnkz58wQiFMvXiJ2YnJRIAUlfr4yPvIi/bGqQ0oAvZxbc/yZ5Gl8VYfH62KvGjmUs+GjXsli6dL9LCXEdfrAf8rUxTzNe12bWxnEk3/BCG06QHf2QWPGEBHUVFGzrx4IojqlwNhwvOcTPVQyfDwbFKAWTQhuYZyC8CZlCCENkemej7aPKFF0YZdTncDCbrJQIUdyBwoKaJloefx2kV/+t4N7m0k0UBCVBBzHpsPMEFE/ZCio2Z8pD/ln35KrVlE/AvDTxkoDmkFawAAAABJRU5ErkJggg=="
+                                />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.pinterest.com/" title="Follow us on Pinterest" style="text-decoration: none">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADhUlEQVRIS7WVf0yVVRjHP8+9yg9hI9rQYjWTe0Xq8l5FxcW9YLlmC7HAmuvH8o+of3Jrra1VmIEzrNlqNZdbulGb2WxlwgTJpW6uAAMk8L1hQO+95HJGtLXkp7rLe9p9+RHcH7Lr1vnr3XO+5/t5nuec8x7hfx5yM38F8qPD5TGRTQpZKbBkApRd5E+U6lIiJ7yG3iqgYvlEBYSMW5zaYwTZgx3XPEnoKCoKA77GaLoIQMtdBckqYeQgwrNxdU/49Crj2zcZxvXZ6+YAJs1HTyBqQ1zm02Lh1FXGH50NmQFYbcnSDsWdeVgmoqTGE9Bf+I859dXs1EpR1N1S5uEQpNjj10+GwlYFVvb3aL5YG5rqziXzuW2kul2WePiCzpWaQ4xe7Imej5IuT0BfHTpdFuCcw+U1sTVFUy95eitZu960psb6+jCvXSclZwWSsBD/zt0Mfl0bA2Ku8wa62y1AsyN3D8iOcGWq5sL9zRcM6z9jvF5JyorlyMIFDLV1sKyqgvQN69HLnmL0l94IiFJUFQZ8uy1Ak0NrECgJV2V/uJf0hx6g65Et5BzYx40/Bkh/sIiRiz10P1POmh++4+8zZzFe2xkJgNpCv+/xqQq0dmBtuGr16Qau/X6ZgcNfklG2md6XXiXvVD3Jy5bSmufh3gP7WHB7upVAxDA55+33eSzA9w6tzQ75EYAzDQT/GaK/ei+Z5dsIVFaT33qW4NAwbfnryTtZh1JmVIA5QUvRbz7vZAVOdz1KbQ4HLP/gXTJKS7i8/yC2xAQGjx1n5fGvuPTeRwy1d+CuPcLg0TqMNyojChDkmMevPzHdoreBiEam3JdjmYjdTs/2V8A0Ge+/RNLSu8natYOExRlcKH2Ssd5fo52kt7x+X/VUBVoBipZoqsVbt+CorqSj6GG0o4dJzLzTkqlgEKOiir9q66MeU5vImgJD/2nmojU7tC4BdzT1opxsCE6Q/fH71vRIp86Vzz5nrM+IdfHPe/y+dTMXzdqHrNwSRBpirYgnblNsLAj4TofWzPmbNju1GhTl8ZiFawX5xOPXX5yOzwE0Op2JaSTXo9h4KxDB/DYtiTJXd/eNqIBQMAS5zVy0X4l6Ph5IKPO0pImXZ5tHtGi2YZNDKxYl7yBq1Tyg8zZFxXTPI1t2k9WTj5BrrcJWjLBKTO4wFcpulwGF6rSJNN5v6J1xP/rxtGY+7b9oDUgo2j3BagAAAABJRU5ErkJggg=="
+                                />
+                            </a>
+                        </li>
+                        <li></li>
+                    </ul>
+                </div>
+
+            </div>
+        </footer>
+    </section>
+</body>
+
+</html>
