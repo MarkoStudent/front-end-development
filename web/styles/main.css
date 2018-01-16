@@ -1,0 +1,484 @@
+body {
+  font-family:Arial,sans-serif;  
+}
+
+header {
+  width:100%;  
+  padding-top: 10px;
+  overflow:hidden;
+}
+
+h1 {
+  font-size:2em;
+  margin:0;
+  padding:0;
+  padding-top:10px;
+}
+
+h2 {
+  font-size:1.6;
+}
+
+hgroup {
+  width:90%;
+  float:left;
+}
+
+hgroup h1 {
+  padding-top:0;
+  line-height:1em;
+  padding-left: 20px;
+}
+
+hgroup h2 {
+  text-transform:uppercase;
+  font-size:1.2em;
+  line-height:1em;
+}
+
+p{
+  text-align: justify;
+}
+
+
+
+.sideNavCourses {
+  width:10%;
+  float:right;
+  text-align: right;
+}
+
+
+.flex-container#flexboxLogin{
+  display: flex;
+  width: 100%;  
+  align-items: center;    
+}
+
+.flex-container#flexboxLogin > div{
+  cursor: pointer; 
+  margin-left: auto;
+  text-align: right;
+}
+
+.flex-container#flexboxLogin img{
+  margin-top: 2px; 
+}
+
+.flex-container#flexboxLogin canvas{
+  margin-top: 0px;
+  width: 26px;
+  height: 27px;
+}
+
+
+#homePageMainContainer {
+  width:100%;
+  padding-top: 5px;
+}
+
+#homePageMainContainer > :first-child{
+  width: 100%;
+}
+
+#homePageMainContainer hr:nth-child(1){
+  margin-bottom: 0px;
+}
+
+#homePageMainContainer .headerCourseContainer{
+  float: left;
+  width: 15%;
+  height: 50px;
+}
+
+#homePageMainContainer .headerCourseContainer h2{
+  padding-left: 20px;
+  margin-top: 10px
+}
+
+#homePageMainContainer .headerTopicConainerHidden{
+  float: right;
+  width: 85%;
+  height: 50px;
+  display: none;
+}
+
+#homePageMainContainer .headerTopicConainerVisible{
+  float: right;
+  width: 85%;
+  height: 50px;
+  display: block;
+}
+
+#homePageMainContainer .headerTopicConainerVisible h2{
+  padding-right: 20px;
+  margin-top: 10px
+}
+
+.sideNavTopics{
+  width:15%;
+  font-size:.8em;
+  float: left;  
+}
+
+.sideNavTopics ul{
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+
+.sideNavTopics ul li{
+  text-decoration: none;
+  border-style: solid;
+  border-color: white;
+  width: 100%;
+  padding-top: 0;
+}
+
+.sideNavTopics .topicsRow{
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+}
+
+.sideNavTopics .topicsRow img:first-child{
+  cursor: pointer;
+  float: left;
+  padding-right: 10px;
+}
+
+#ovewviewImg{
+  display: block;
+}
+#topicsImg{
+  display: none;
+}
+#forumImg{
+  display: none;
+}
+#supportImg{
+  display: none;
+}
+
+.sideNavTopics .topicsRow h3{
+  margin-top:0px;
+  float: left;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.lessonContentVisible{
+  width:85%;
+  float: right;
+  font-size: 13px;
+  display: block;
+}
+
+.lessonContentVisible .videoContainer{
+  display: inline-block;
+}
+
+.lessonContentVisible .videoContainer div:nth-child(1){
+  float: left;
+}
+
+.lessonContentVisible .videoContainer div:nth-child(2){
+  float: right;
+}
+
+.lessonContentVisible p{
+  margin-top:5px;
+}
+
+.lessonContentVisible .contactUsContainer{
+  display: inline-block;
+}
+
+.lessonContentVisible .contactUsContainer div:nth-child(1){  
+  width: 38%;
+  float: left;
+}
+
+.lessonContentVisible .contactUsContainer div:nth-child(2){
+  float: right;
+}
+
+
+.lessonContentHidden{
+  display: none;
+}
+
+@font-face {
+  
+      font-family: 'GoodDogRegular';
+  
+      src: url('GoodDog-webfont.eot');
+  
+      src: url('GoodDog-webfont.eot?#iefix') format('embedded-opentype'),
+  
+           url('GoodDog-webfont.woff') format('woff'),
+  
+           url('GoodDog-webfont.ttf') format('truetype'),
+  
+           url('GoodDog-webfont.svg#GoodDogRegular') format('svg');
+  
+      font-weight: normal;
+  
+      font-style: normal;
+  
+  
+  }
+
+.poweredBy{
+  font-family: GoodDogRegular;
+  font-size: 35px;
+  margin-top: 0px;
+}
+
+
+.footerContainer{
+  font-size: 70%;
+  height:50px;
+  margin-top: 5px;
+  width:100%;
+  display: inline-block;
+}
+
+.footerContainer{
+  font-size: 70%;
+  height:50px;
+  margin-top: 5px;
+  width:100%;
+  display: inline-block;
+}
+
+
+
+
+.footerContainer .copyRigthRow{
+  float: left;
+  width: 18%;
+  
+}
+
+.footerContainer .termUserRow{
+  float: left;
+  width: 10%;
+}
+
+.footerContainer .privacyRow{
+  float: left;
+  width: 10%;
+}
+
+.footerContainer .emptyRow{
+  float: left;
+  width: 20%;
+}
+
+
+.footerContainer .socialRow{  
+  text-align: right;
+  float: left;
+  width: 42%
+	
+}
+
+
+.footerContainer #agreement a{
+  color: black;
+  text-decoration: none;
+}
+
+.footerContainer #agreement a:hover{
+  text-decoration: underline;
+}
+
+.socialRow ul{  
+  list-style: none;
+	
+}
+
+.socialRow li{
+  display: inline; 
+  padding-right: 5px;
+}
+
+
+
+.datagrid {
+  font: normal 12px/150% Arial, Helvetica, sans-serif; 
+  background: #fff; overflow: hidden; 
+  border: 1px solid #006699; 
+  -webkit-border-radius: 3px; 
+  -moz-border-radius: 3px; 
+  border-radius: 3px; 
+}
+
+.datagrid table { 
+  border-collapse: collapse; 
+  text-align: left; width: 100%; 
+}
+
+
+.datagrid table td, .datagrid table th { 
+  padding: 3px 10px; 
+}
+
+.datagrid table thead th {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #00557F) );
+  background:-moz-linear-gradient( center top, #006699 5%, #00557F 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F');
+  background-color:#006699; color:#E6E6E6; font-size: 15px; 
+  font-weight: bold; 
+  border-left: 1px solid #0070A8; 
+} 
+
+.datagrid table thead th:first-child { 
+  border: none; 
+}
+
+.datagrid table tbody td { 
+  color: #00557F; 
+  border-left: 1px solid #E1EEF4;
+  font-size: 12px;
+  font-weight: normal; 
+}
+
+.datagrid table tbody td:first-child { 
+  border-left: none; 
+}
+.datagrid table tbody tr:last-child td { 
+  border-bottom: none; 
+}
+.datagrid table tbody tr:hover { 
+  background-color:#ccccff; 
+}
+
+.datagrid table tbody tr:nth-child(odd){
+  background: #E1EEf4; color: #00557F;
+}
+
+.datagrid table tbody tr:nth-child(odd):hover { 
+  background-color:#ccccff; 
+}
+.datagrid table tfoot td div { 
+  border-top: 1px solid #006699;
+  background: #E1EEf4;
+}
+
+.datagrid table tfoot td { 
+  padding: 0; font-size: 12px 
+} 
+
+.datagrid table tfoot td div{ 
+  padding: 2px; 
+}
+
+.datagrid table tfoot td ul { 
+  margin: 0; 
+  padding:0; list-style: none; 
+  text-align: right; 
+}
+
+.datagrid table tfoot  li { 
+  display: inline; 
+}
+
+.datagrid table tfoot li a { 
+  text-decoration: none; 
+  display: inline-block; 
+   padding: 2px 8px; margin: 1px;
+   color: #FFFFFF;
+   border: 1px solid #006699;
+   -webkit-border-radius: 3px; 
+   -moz-border-radius: 3px; 
+   border-radius: 3px; 
+   background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #00557F) );
+   background:-moz-linear-gradient( center top, #006699 5%, #00557F 100% );
+   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F');
+   background-color:#006699; 
+  }
+
+.datagrid table tfoot ul.active, .datagrid table tfoot ul a:hover {
+   text-decoration: none;
+   border-color: #00557F; 
+   color: #FFFFFF; 
+   background: none; 
+   background-color:#006699;
+  }
+
+div.dhtmlx_window_active, div.dhx_modal_cover_dv { 
+  position: fixed !important; 
+}
+
+.gridCalculator {
+  width: 190px;
+  transition-property: width;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  transition-delay: 1s;
+}
+
+.gridCalculator:hover{
+  width: 250px;
+}
+
+.gridCalculator .gridHeader{ 
+  background-color: #9999ff;
+  padding: 10px;
+  grid-column-gap: 5px;
+  grid-row-gap:5px;
+}
+
+.gridCalculator .gridBody{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #9999ff;
+  padding: 10px;
+  grid-column-gap: 5px;
+  grid-row-gap:5px;
+}
+.gridCalculator .gridBody .calcNumber {
+  border: 1px solid black;
+  text-align: center;
+}
+.gridCalculator .gridBody button{
+  font-size: 30px;
+  width: 50px;
+
+}
+.gridCalculator .gridBody button:hover{
+  transform: scale(1) translate(10px, 10px) rotate(20deg);;
+}
+
+#animationExample .flexbox{
+  display: flex;
+  width: 100%;     
+  font-size: 60px;  
+  align-items: center;
+  justify-content: center;
+}
+
+#animationExample .flexbox div:nth-child(odd){
+  animation-name: oddContainer;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+#animationExample .flexbox div:nth-child(even){
+  animation-name: evenContainer;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes oddContainer {
+  from {color: red;}
+  to {color: yellow;}
+}
+
+
+@keyframes evenContainer {
+  from {color: yellow;}
+  to {color: red;}
+}
