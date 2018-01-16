@@ -1,5 +1,5 @@
 # front-end-development
-Studying web developer technologies
+Studying web development technologies
 
 Applying what I learned from the following courses:
 
