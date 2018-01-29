@@ -1,1 +1,6 @@
-
+<user>
+    <name>Juan</name>
+    <lastName>Perez</lastName>
+    <age>23</age>
+    <receiveNotifications>false</receiveNotifications>
+</user>
