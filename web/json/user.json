@@ -1,1 +1,6 @@
-
+{
+    "name":"Jose",
+    "lastName":"Perez",
+    "age":23,
+    "receiveNotifications":false
+}
