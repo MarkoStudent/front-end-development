@@ -1,4 +1,4 @@
-body {
+﻿body {
   font-family:Arial,sans-serif;  
 }
 
@@ -481,4 +481,16 @@ div.dhtmlx_window_active, div.dhx_modal_cover_dv {
 @keyframes evenContainer {
   from {color: yellow;}
   to {color: red;}
+}
+
+.progressBar{
+  display: block;text-align: center;width: 0;height: 3px;background: red;transition: width .3s;
+}
+
+.progressBarContainer{
+  width: 420px;height: 200px;padding-top: 30px;border-style: solid;float: left
+}
+
+.destroyEffectContainer{
+  width: 200px;height: 200px;padding-top: 30px;border-style: solid;float: left
 }
